@@ -3,12 +3,12 @@ package ar.edu.ubp.das.conections;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
-public class ConectionManager {
+public class ConnectionManager {
 
 	public IConnections GetConection(String tipo) {
 		Class<?> clase;
 		try {
-			clase = Class.forName("ar/edu/ubp/das/conections/" + tipo+"Connection");
+			clase = Class.forName("ar.edu.ubp.das.conections." + tipo+"Connection");
 
 			Constructor<?> constructor = clase.getConstructor();
 			
