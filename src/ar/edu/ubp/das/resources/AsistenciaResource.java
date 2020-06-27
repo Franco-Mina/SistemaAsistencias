@@ -7,14 +7,15 @@ import javax.ws.rs.core.Response;
 
 import ar.edu.ubp.das.bean.AsistenciaBean;
 import ar.edu.ubp.das.conections.RestConnection;
+import ar.edu.ubp.das.conections.SoapConnection;
 
 @Path("/asistencia")
 public class AsistenciaResource {
 
 	@GET
 	public Response getAsistencias() {
-		RestConnection connection = new RestConnection();
-		String result = connection.CallApi("http://localhost:8080/BomberosRest/api/asistencias", "Get", null);
+		SoapConnection connection = new SoapConnection();
+		String result = connection.CallApi("http://localhost:9090/AsistenciaPort?wsdl", "getAsistencia", null);
 		return Response.status(Response.Status.OK).entity(result!=null?result:"error").build();
 	}
 	
