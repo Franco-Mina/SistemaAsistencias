@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
+import org.apache.hc.client5.http.ClientProtocolException;
 import org.apache.hc.client5.http.classic.methods.HttpUriRequestBase;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.apache.hc.client5.http.impl.classic.HttpClients;
@@ -40,8 +41,12 @@ public class RestConnection implements IConnections {
 			
 			return responseBody;
 			
-		} catch (IOException e) {
+		} catch (ClientProtocolException e) {
 			// TODO Auto-generated catch block
+			System.out.println("Error de protocolo");
+			e.printStackTrace();
+		}catch (IOException e) {
+			// TODO: handle exception
 			e.printStackTrace();
 		}
 		return null;

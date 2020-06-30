@@ -56,7 +56,7 @@ class ConnectionTest {
 		assertNotNull(conexiones.getListaConexiones());
 				
 		assertNotEquals(0, conexiones.getListaConexiones().size());
-		assertEquals("Rest", conexiones.getListaConexiones().get(0).getMetodo());
+		assertEquals("Rest", conexiones.getListaConexiones().get(0).getTipo());
 		assertEquals("Post", conexiones.getListaConexiones().get(0).getAccion());
 		assertEquals("http://localhost:8080/BomberosRest/api/asistencias", conexiones.getListaConexiones().get(0).getUrl());
 	}
@@ -67,7 +67,7 @@ class ConnectionTest {
 		
 		assertNotNull(conexion);
 		
-		assertEquals("Rest",conexion.getMetodo());
+		assertEquals("Rest",conexion.getTipo());
 		assertEquals("Post", conexion.getAccion());
 		assertEquals("http://localhost:8080/BomberosRest/api/asistencias",conexion.getUrl());
 		

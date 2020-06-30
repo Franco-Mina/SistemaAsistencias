@@ -13,6 +13,20 @@ import ar.edu.ubp.das.util.Conexiones;
 
 public class ConnectionManager {
 	
+	public String callApi(int idConexion, Object parameters) {
+		Conexion conexion = this.getConnectionById(idConexion);
+		
+		if(conexion == null || conexion.getTipo() == "") return null;
+		
+		IConnections tipoConexion = this.getConnection(conexion.getTipo());
+		
+		if(tipoConexion == null) return null;
+		
+		String resultado = tipoConexion.CallApi(conexion.getUrl(), conexion.getAccion(), parameters);
+		
+		return resultado;
+	}
+	
 	public Conexion getConnectionById(int idConexion) {
 		Conexiones conexiones = this.getConnections();
 		

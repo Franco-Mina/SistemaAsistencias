@@ -18,7 +18,7 @@ public class Conexion implements Serializable {
 	
 	
 	private int Entidad;
-	private String Metodo;
+	private String Tipo;
 	private String Url;
 	private String Accion;
 	
@@ -27,12 +27,6 @@ public class Conexion implements Serializable {
 	}
 	public void setEntidad(int entidad) {
 		Entidad = entidad;
-	}
-	public String getMetodo() {
-		return Metodo;
-	}
-	public void setMetodo(String metodo) {
-		Metodo = metodo;
 	}
 	public String getUrl() {
 		return Url;
@@ -48,5 +42,11 @@ public class Conexion implements Serializable {
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+	public String getTipo() {
+		return Tipo;
+	}
+	public void setTipo(String tipo) {
+		Tipo = tipo;
 	}	
 }
