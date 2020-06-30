@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conexiones>
+	<conexion>
+		<entidad>1</entidad>
+		<metodo>Rest</metodo>
+		<url>http://localhost:8080/BomberosRest/api/asistencias</url>
+		<accion>Post</accion>
+	</conexion>
+</conexiones>
