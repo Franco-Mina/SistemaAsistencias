@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conexiones>
+	<conexion>
+		<entidad>1</entidad>
+		<tipo>Rest</tipo>
+		<url>http://localhost:8080/BomberosRest/api/asistencias</url>
+		<accion>Post</accion>
+	</conexion>
+	<conexion>
+		<entidad>2</entidad>
+		<tipo>Rest</tipo>
+		<url>http://localhost:8080/BomberosRest/api/ping</url>
+		<accion>Get</accion>
+	</conexion>
+	<conexion>
+		<entidad>3</entidad>
+		<tipo>Soap</tipo>
+		<url>http://localhost:9090/AsistenciaPort?wsdl</url>
+		<accion>getAsistencia</accion>
+	</conexion>
+</conexiones>
