@@ -5,9 +5,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 
-import ar.edu.ubp.das.bean.AsistenciaBean;
 import ar.edu.ubp.das.conections.ConnectionManager;
-import ar.edu.ubp.das.conections.RestConnection;
 
 @Path("/asistencia")
 public class AsistenciaResource {

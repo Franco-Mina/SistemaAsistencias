@@ -12,7 +12,6 @@ public class SoapConnection implements IConnections {
 		
 		JaxWsDynamicClientFactory factory = JaxWsDynamicClientFactory.newInstance();
 		
-//		"http://localhost:8080/CXFTest/services?wsdl"
 		Client cliente = factory.createClient(url);
 		
 		try {

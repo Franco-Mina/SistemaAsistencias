@@ -15,7 +15,13 @@
 	<conexion>
 		<entidad>3</entidad>
 		<tipo>Soap</tipo>
-		<url>http://localhost:9090/AsistenciaPort?wsdl</url>
-		<accion>getAsistencia</accion>
+		<url>http://localhost:8080/MunicipalidadCxf/services/TokenPort?wsdl</url>
+		<accion>getToken</accion>
+	</conexion>
+	<conexion>
+		<entidad>4</entidad>
+		<tipo>Soap</tipo>
+		<url>http://localhost:8080/MunicipalidadCxf/services?wsdl</url>
+		<accion>getNoticias</accion>
 	</conexion>
 </conexiones>
