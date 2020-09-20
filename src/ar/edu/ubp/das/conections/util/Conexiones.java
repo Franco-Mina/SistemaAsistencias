@@ -1,4 +1,4 @@
-package ar.edu.ubp.das.util;
+package ar.edu.ubp.das.conections.util;
 
 import java.io.Serializable;
 import java.util.LinkedList;

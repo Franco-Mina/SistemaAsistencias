@@ -1,4 +1,4 @@
-package ar.edu.ub.das.token.bean;
+package ar.edu.ubp.das.bean.ws;
 
 import java.sql.Timestamp;
 

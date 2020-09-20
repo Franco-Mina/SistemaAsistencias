@@ -1,11 +1,12 @@
-package ar.edu.ub.das.token.bean;
+package ar.edu.ubp.das.bean;
 
 import java.sql.Timestamp;
 
 public class TokenBean {
 	
 	private int 	id;
-	private int 	idEntidad;
+	private String  idServicio;
+	private String 	idGobierno;
 	private String 	token;
 	private Timestamp 	fechaCreacion;
 	private Timestamp 	fechaExpiracion;
@@ -16,12 +17,6 @@ public class TokenBean {
 	public void setId(int id) {
 		this.id = id;
 	}	
-	public int getIdEntidad() {
-		return idEntidad;
-	}
-	public void setIdEntidad(int idEntidad) {
-		this.idEntidad = idEntidad;
-	}
 	public String getToken() {
 		return token;
 	}
@@ -39,5 +34,17 @@ public class TokenBean {
 	}
 	public void setFechaCreacion(Timestamp fechaCreacion) {
 		this.fechaCreacion = fechaCreacion;
+	}
+	public String getIdServicio() {
+		return idServicio;
+	}
+	public void setIdServicio(String idServicio) {
+		this.idServicio = idServicio;
+	}
+	public String getIdGobierno() {
+		return idGobierno;
+	}
+	public void setIdGobierno(String idGobierno) {
+		this.idGobierno = idGobierno;
 	}
 }
