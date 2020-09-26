@@ -1,27 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <conexiones>
 	<conexion>
-		<entidad>1</entidad>
+		<nro_conexion>1</nro_conexion>
+		<entidad>bomberos</entidad>
 		<tipo>Rest</tipo>
 		<url>http://localhost:8080/BomberosRest/api/asistencias</url>
 		<accion>Post</accion>
+		<req_token>true</req_token>
 	</conexion>
 	<conexion>
-		<entidad>2</entidad>
+		<nro_conexion>2</nro_conexion>
+		<entidad>bomberos</entidad>
 		<tipo>Rest</tipo>
 		<url>http://localhost:8080/BomberosRest/api/ping</url>
 		<accion>Get</accion>
+		<req_token>false</req_token>
 	</conexion>
 	<conexion>
-		<entidad>3</entidad>
+		<nro_conexion>3</nro_conexion>
+		<entidad>municipalidad</entidad>
 		<tipo>Soap</tipo>
 		<url>http://localhost:8080/MunicipalidadCxf/services/TokenPort?wsdl</url>
 		<accion>getToken</accion>
+		<req_token>false</req_token>
+		<neg_token>true</neg_token>
+		<usuario>u1</usuario>
+		<password>123</password>
 	</conexion>
 	<conexion>
-		<entidad>4</entidad>
+		<nro_conexion>4</nro_conexion>
+		<entidad>municipalidad</entidad>
 		<tipo>Soap</tipo>
-		<url>http://localhost:8080/MunicipalidadCxf/services?wsdl</url>
+		<url>http://localhost:8080/MunicipalidadCxf/services/ObtenerNoticiasPort?wsdl</url>
 		<accion>getNoticias</accion>
+		<req_token>true</req_token>
 	</conexion>
 </conexiones>

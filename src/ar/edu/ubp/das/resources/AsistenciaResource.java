@@ -14,14 +14,7 @@ public class AsistenciaResource {
 	
 	@GET
 	public Response getAsistencias() {
-		String result = this.connectionManager.callApi(2, null);
-		return Response.status(Response.Status.OK).entity(result!=null?result:"error").build();
-	}
-	
-	
-	@POST
-	public Response instAsistencia() {
-		String result = this.connectionManager.callApi(3, null);
+		String result = this.connectionManager.callApi(2, null).toString();
 		return Response.status(Response.Status.OK).entity(result!=null?result:"error").build();
 	}
 }

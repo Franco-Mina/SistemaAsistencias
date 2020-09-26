@@ -1,4 +1,4 @@
-package ar.edu.ub.das.token.bean;
+package ar.edu.ubp.das.token.bean;
 
 public class TokenRequestBean {
 
