@@ -5,12 +5,12 @@ import java.sql.Timestamp;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import ar.edu.ubp.das.bean.TokenBean;
 import ar.edu.ubp.das.daos.MSTokenDao;
 import ar.edu.ubp.das.db.Dao;
 import ar.edu.ubp.das.db.DaoFactory;
+import ar.edu.ubp.das.token.bean.TokenResponseBean;
 
 public class TokenManager {
 
@@ -38,7 +38,7 @@ public class TokenManager {
 		Optional<TokenBean> token = null;
 		
 		if(!this._listaTokens.isEmpty()) {
-			token = this._listaTokens.stream().filter(x -> x.getIdServicio() == servicio 
+			token = this._listaTokens.stream().filter(x -> x.getIdServicio().equals(servicio) 
 					&& x.getFechaExpiracion().after(new Timestamp(System.currentTimeMillis()))).findFirst();
 			
 			if(token.isPresent()) return token.get();
@@ -51,7 +51,7 @@ public class TokenManager {
 			token = Optional.ofNullable(((MSTokenDao) dao).buscarToken(servicio));
 					
 			if(token.isPresent()) {
-				this._listaTokens.removeIf(x -> x.getIdServicio() == servicio);
+				this._listaTokens.removeIf(x -> x.getIdServicio().equals(servicio));
 				this._listaTokens.add(token.get());
 				
 				return token.get();
@@ -65,20 +65,41 @@ public class TokenManager {
 		}
 	}
 	
-	public void agregarToken (TokenBean token) {
+	public void nuevoToken(TokenResponseBean tokenResponse, String servicio) {
+		
+		try {
+			Dao<TokenBean, TokenBean> dao = DaoFactory.getDao("Token", "ar.edu.ubp.das");
+			
+			TokenBean tokenNuevo = new TokenBean();
+			
+			tokenNuevo.setIdServicio(servicio);
+			tokenNuevo.setFechaExpiracion(tokenResponse.getFechaExpiracion());
+			tokenNuevo.setFechaCreacion(new Timestamp(System.currentTimeMillis()));
+			tokenNuevo.setToken(tokenResponse.getToken());
+			
+			dao.insert(tokenNuevo);
+			
+			this.agregarToken(tokenNuevo);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	private void agregarToken (TokenBean token) {
 		synchronized (this._lock) {
 			this._listaTokens.removeIf(x -> x.getIdServicio() == token.getIdServicio());
 			this._listaTokens.add(token);
 		}
 	}
 	
-	public void agregarToken (List<TokenBean> listaToken) {
-		List<String> listaServicios = listaToken.stream().map(TokenBean::getIdServicio).collect(Collectors.toList());
-		synchronized (this._lock) {
-			this._listaTokens.removeIf(x ->listaServicios.contains(x.getIdServicio()));
-			this._listaTokens.addAll(listaToken);
-		}
-	}
+//	private void agregarToken (List<TokenBean> listaToken) {
+//		List<String> listaServicios = listaToken.stream().map(TokenBean::getIdServicio).collect(Collectors.toList());
+//		synchronized (this._lock) {
+//			this._listaTokens.removeIf(x ->listaServicios.contains(x.getIdServicio()));
+//			this._listaTokens.addAll(listaToken);
+//		}
+//	}
 	
 	@Override
 	protected Object clone() throws CloneNotSupportedException {

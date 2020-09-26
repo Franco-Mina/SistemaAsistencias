@@ -1,6 +1,6 @@
 package ar.edu.ubp.municipalidad;
 
-public class NoticiasManger {
+public class NoticiasManager {
 
-	
+
 }

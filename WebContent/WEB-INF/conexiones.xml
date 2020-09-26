@@ -31,7 +31,7 @@
 		<nro_conexion>4</nro_conexion>
 		<entidad>municipalidad</entidad>
 		<tipo>Soap</tipo>
-		<url>http://localhost:8080/MunicipalidadCxf/services?wsdl</url>
+		<url>http://localhost:8080/MunicipalidadCxf/services/ObtenerNoticiasPort?wsdl</url>
 		<accion>getNoticias</accion>
 		<req_token>true</req_token>
 	</conexion>
