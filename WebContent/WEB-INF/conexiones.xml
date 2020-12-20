@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<conexiones>
+<conexiones>	
 	<conexion>
 		<nro_conexion>1</nro_conexion>
-		<entidad>bomberos</entidad>
-		<tipo>Rest</tipo>
-		<url>http://localhost:8080/BomberosRest/api/asistencias</url>
-		<accion>Post</accion>
-		<req_token>true</req_token>
-	</conexion>
-	<conexion>
-		<nro_conexion>2</nro_conexion>
-		<entidad>bomberos</entidad>
-		<tipo>Rest</tipo>
-		<url>http://localhost:8080/BomberosRest/api/ping</url>
-		<accion>Get</accion>
-		<req_token>false</req_token>
-	</conexion>
-	<conexion>
-		<nro_conexion>3</nro_conexion>
 		<entidad>municipalidad</entidad>
 		<tipo>Soap</tipo>
 		<url>http://localhost:8080/MunicipalidadCxf/services/TokenPort?wsdl</url>
@@ -28,7 +12,7 @@
 		<password>123</password>
 	</conexion>
 	<conexion>
-		<nro_conexion>4</nro_conexion>
+		<nro_conexion>2</nro_conexion>
 		<entidad>municipalidad</entidad>
 		<tipo>Soap</tipo>
 		<url>http://localhost:8080/MunicipalidadCxf/services/ObtenerNoticiasPort?wsdl</url>
