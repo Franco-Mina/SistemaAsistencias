@@ -1,16 +1,16 @@
 package ar.edu.ubp.das.resources;
 
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 
 import ar.edu.ubp.das.conections.ConnectionManager;
+import ar.edu.ubp.das.db.WebDbManager;
 
 @Path("/asistencia")
 public class AsistenciaResource {
 
-	private ConnectionManager connectionManager = new ConnectionManager();	
+	private ConnectionManager connectionManager = new ConnectionManager("/WEB-INF/conexiones.xml",new WebDbManager("Token","ar.edu.ubp.das.db"));	
 	
 	@GET
 	public Response getAsistencias() {
