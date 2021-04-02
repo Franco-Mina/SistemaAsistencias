@@ -26,6 +26,6 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/das-dao.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/sqljdbc4.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/conection-manager.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/token-manager.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/ErrorLogger.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

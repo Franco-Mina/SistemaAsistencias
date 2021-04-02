@@ -5,12 +5,11 @@ import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 
 import ar.edu.ubp.das.conections.ConnectionManager;
-import ar.edu.ubp.das.db.WebDbManager;
-
+import ar.edu.ubp.das.token.db.WebTokenManager;
 @Path("/asistencia")
 public class AsistenciaResource {
 
-	private ConnectionManager connectionManager = new ConnectionManager("/WEB-INF/conexiones.xml",new WebDbManager("Token","ar.edu.ubp.das.db"));	
+	private ConnectionManager connectionManager = new ConnectionManager("/WEB-INF/conexiones.xml",new WebTokenManager("Token","ar.edu.ubp.das.db"));	
 	
 	@GET
 	public Response getAsistencias() {
