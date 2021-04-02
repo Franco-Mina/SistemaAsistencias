@@ -4,8 +4,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-import ar.edu.ubp.das.bean.TokenBean;
 import ar.edu.ubp.das.db.Dao;
+import ar.edu.ubp.das.token.bean.TokenBean;
 
 public class MSTokenDao extends Dao<TokenBean, TokenBean>{
 
